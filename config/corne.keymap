@@ -13,12 +13,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LEFT_CONTROL &kp LEFT_ALT>,
                 <&macro_press>,
-                <&kp O>,
+                <&kp LEFT_CONTROL &kp LEFT_ALT &kp O>,
                 <&macro_tap>,
                 <&kp LEFT_ALT &kp LEFT_CONTROL>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp>,
+                <&macro_press>;
 
             label = "OPTIMIZEIMPORT";
         };
@@ -28,7 +29,7 @@
         compatible = "zmk,combos";
 
         six {
-            bindings = <&kp NUMBER_6>;
+            bindings = <&kp L>;
             key-positions = <38 1>;
             layers = <3>;
             timeout-ms = <300>;
@@ -115,9 +116,9 @@
 
         GamingAddon {
             bindings = <
-&kp ESC  &kp N1  &trans     &kp N3          &kp N4          &kp N5             &trans  &kp INS  &kp HOME  &kp PAGE_UP    &trans  &trans
-&trans   &trans  &trans     &trans          &kp UP_ARROW    &kp N6             &trans  &kp DEL  &kp END   &kp PAGE_DOWN  &trans  &trans
-&trans   &kp N2  &kp TILDE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &trans  &trans   &trans    &trans         &trans  &trans
+&kp ESC  &kp N1  &trans     &kp N3          &kp N4          &kp N5             &trans  &kp INS  &kp HOME  &kp PAGE_UP    &kp F1  &kp F2
+&trans   &trans  &trans     &trans          &kp UP_ARROW    &kp N6             &trans  &kp DEL  &kp END   &kp PAGE_DOWN  &trans  &kp F4
+&trans   &kp N2  &kp GRAVE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &trans  &trans   &trans    &trans         &trans  &trans
                             &trans          &trans          &trans             &trans  &trans   &trans
             >;
         };
