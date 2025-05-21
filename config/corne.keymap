@@ -9,7 +9,7 @@
 
 / {
     macros {
-        optimizeimport: optimizeimport {
+        optimizeimport_macro: optimizeimport {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -32,37 +32,102 @@
 
             label = "THISISUNSAFE_MACRO";
         };
+
+        formatcode_macro: formatcode_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp LEFT_GUI>,
+                <&macro_tap>,
+                <&kp L>,
+                <&macro_release>,
+                <&kp LEFT_GUI &kp LEFT_ALT>;
+
+            label = "FORMATCODE_MACRO";
+        };
+
+        video_macro: video_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_GUI &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp NUMBER_5>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT &kp LEFT_ALT>;
+
+            label = "VIDEO_MACRO";
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        six {
+        l_combo {
             bindings = <&kp L>;
             key-positions = <38 1>;
             layers = <3>;
             timeout-ms = <3000>;
         };
 
-        seven {
+        seven_combo {
             bindings = <&kp NUMBER_7>;
             key-positions = <38 25>;
             layers = <3>;
             timeout-ms = <3000>;
         };
 
-        eight {
+        eight_combo {
             bindings = <&kp NUMBER_8>;
             key-positions = <38 3>;
             layers = <3>;
             timeout-ms = <3000>;
         };
 
-        nine {
+        nine_combo {
             bindings = <&kp NUMBER_9>;
             key-positions = <38 4>;
             layers = <3>;
             timeout-ms = <3000>;
+        };
+
+        video_combo {
+            bindings = <&video_macro>;
+            key-positions = <12 11>;
+            layers = <2>;
+        };
+
+        console_combo {
+            bindings = <&kp GRAVE>;
+            key-positions = <38 0>;
+            timeout-ms = <3000>;
+            layers = <3>;
+        };
+
+        lbracket_combo {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <24 20>;
+            layers = <2>;
+        };
+
+        rbracket_combo {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <24 21>;
+            layers = <2>;
+        };
+
+        lpar_combo {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <12 20>;
+            layers = <2>;
+        };
+
+        rpar_combo {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <12 21>;
+            layers = <2>;
         };
     };
 
@@ -92,10 +157,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC  &kp EQUAL  &kp N7  &kp N8    &kp N9    &kp N0       &trans  &trans          &kp UP_ARROW    &trans           &kp MINUS      &kp BSPC
-&trans   &trans     &kp N4  &kp N5    &kp N6    &trans       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT        &kp BACKSLASH  &kp RALT
-&trans   &trans     &kp N1  &kp N2    &kp N3    &trans       &trans  &trans          &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans
-                            &kp LGUI  &kp LALT  &kp SPACE    &trans  &trans          &trans
+&kp ESC  &kp PLUS  &kp N7  &kp N8    &kp N9    &kp N0       &trans  &trans          &kp UP_ARROW    &trans           &kp MINUS  &kp BSPC
+&trans   &kp STAR  &kp N4  &kp N5    &kp N6    &trans       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT        &kp SLASH  &kp RALT
+&trans   &trans    &kp N1  &kp N2    &kp N3    &trans       &trans  &trans          &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans     &trans
+                           &kp LGUI  &kp LALT  &kp SPACE    &trans  &trans          &trans
             >;
         };
 
@@ -107,10 +172,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5             &kp F6   &kp F7  &kp F8    &kp F9    &kp F10   &kp BSPC
-&trans      &trans  &trans  &trans  &trans  &trans             &trans   &trans  &kp LBKT  &kp RBKT  &kp BSLH  &trans
-&trans      &trans  &trans  &trans  &trans  &trans             &trans   &trans  &trans    &trans    &trans    &to 3
-                            &trans  &trans  &optimizeimport    &kp RET  &trans  &kp RALT
+&kp ESCAPE  &kp F1  &kp F2  &kp F3             &kp F4  &kp F5                   &kp F6   &kp F7  &kp F8          &kp F9           &kp F10   &kp PRINTSCREEN
+&trans      &trans  &trans  &trans             &trans  &trans                   &trans   &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BSLH  &thisisunsafe_macro
+&trans      &trans  &trans  &trans             &trans  &trans                   &trans   &trans  &trans          &trans           &trans    &to 3
+                            &formatcode_macro  &trans  &optimizeimport_macro    &kp RET  &trans  &kp RALT
             >;
         };
 
@@ -125,10 +190,10 @@
 
         GamingAddon {
             bindings = <
-&kp ESC  &kp N1  &trans     &kp N3          &kp N4          &kp N5             &trans  &kp INS  &kp HOME  &kp PAGE_UP    &kp F1  &kp F2
-&trans   &trans  &trans     &trans          &kp UP_ARROW    &kp N6             &trans  &kp DEL  &kp END   &kp PAGE_DOWN  &trans  &kp F4
-&trans   &kp N2  &kp GRAVE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &trans  &trans   &trans    &trans         &trans  &trans
-                            &trans          &trans          &trans             &trans  &trans   &trans
+&kp ESC  &kp N1  &trans        &kp N3          &kp N4          &kp N5             &trans  &kp INS  &kp HOME  &kp PAGE_UP    &trans  &kp F1
+&trans   &trans  &trans        &trans          &kp UP_ARROW    &kp N6             &trans  &kp DEL  &kp END   &kp PAGE_DOWN  &trans  &kp F2
+&trans   &kp N2  &kp NUMBER_6  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &trans  &trans   &trans    &trans         &trans  &kp F4
+                               &trans          &trans          &trans             &trans  &trans   &trans
             >;
         };
     };
