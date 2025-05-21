@@ -32,28 +32,28 @@
             bindings = <&kp L>;
             key-positions = <38 1>;
             layers = <3>;
-            timeout-ms = <300>;
+            timeout-ms = <3000>;
         };
 
         seven {
             bindings = <&kp NUMBER_7>;
             key-positions = <38 25>;
             layers = <3>;
-            timeout-ms = <300>;
+            timeout-ms = <3000>;
         };
 
         eight {
             bindings = <&kp NUMBER_8>;
             key-positions = <38 3>;
             layers = <3>;
-            timeout-ms = <300>;
+            timeout-ms = <3000>;
         };
 
         nine {
             bindings = <&kp NUMBER_9>;
             key-positions = <38 4>;
             layers = <3>;
-            timeout-ms = <300>;
+            timeout-ms = <3000>;
         };
     };
 
