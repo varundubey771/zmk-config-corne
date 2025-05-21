@@ -17,6 +17,34 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        six {
+            bindings = <&kp NUMBER_6>;
+            key-positions = <1 38>;
+            layers = <3>;
+        };
+
+        seven {
+            bindings = <&kp NUMBER_7>;
+            key-positions = <38 25>;
+            layers = <3>;
+        };
+
+        eight {
+            bindings = <&kp NUMBER_8>;
+            key-positions = <38 2>;
+            layers = <3>;
+        };
+
+        nine {
+            bindings = <&kp NUMBER_9>;
+            key-positions = <38 3>;
+            layers = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
