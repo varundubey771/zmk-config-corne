@@ -8,6 +8,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        optimizeimport: optimizeimport {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT_CONTROL) &kp LEFT_ALT &kp O>;
+            label = "OPTIMIZEIMPORT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -49,10 +58,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5          &kp F6   &kp F7  &kp F8    &kp F9    &kp F10   &kp BSPC
-&trans      &trans  &trans  &trans  &trans  &trans          &trans   &trans  &kp LBKT  &kp RBKT  &kp BSLH  &trans
-&trans      &trans  &trans  &trans  &trans  &trans          &trans   &trans  &trans    &trans    &trans    &trans
-                            &trans  &trans  &kp LEFT_GUI    &kp RET  &trans  &kp RALT
+&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5             &kp F6   &kp F7  &kp F8    &kp F9    &kp F10   &kp BSPC
+&trans      &trans  &trans  &trans  &trans  &trans             &trans   &trans  &kp LBKT  &kp RBKT  &kp BSLH  &trans
+&trans      &trans  &trans  &trans  &trans  &trans             &trans   &trans  &trans    &trans    &trans    &trans
+                            &trans  &trans  &optimizeimport    &kp RET  &trans  &kp RALT
             >;
         };
 
