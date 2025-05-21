@@ -12,7 +12,7 @@
         optimizeimport: optimizeimport {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LEFT_CONTROL) &kp LEFT_ALT &kp O>;
+            bindings = <&kp H &kp E &kp L &kp L &kp O &kp SPACE &kp H &kp I>;
             label = "OPTIMIZEIMPORT";
         };
     };
@@ -24,28 +24,28 @@
             bindings = <&kp NUMBER_6>;
             key-positions = <38 1>;
             layers = <3>;
-            timeout-ms = <150>;
+            timeout-ms = <300>;
         };
 
         seven {
             bindings = <&kp NUMBER_7>;
             key-positions = <38 25>;
             layers = <3>;
-            timeout-ms = <150>;
+            timeout-ms = <300>;
         };
 
         eight {
             bindings = <&kp NUMBER_8>;
             key-positions = <38 3>;
             layers = <3>;
-            timeout-ms = <150>;
+            timeout-ms = <300>;
         };
 
         nine {
             bindings = <&kp NUMBER_9>;
             key-positions = <38 4>;
             layers = <3>;
-            timeout-ms = <150>;
+            timeout-ms = <300>;
         };
     };
 
