@@ -106,34 +106,6 @@
             timeout-ms = <3000>;
             layers = <3>;
         };
-
-        lbracket_combo {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <24 20>;
-            layers = <2>;
-            timeout-ms = <3000>;
-        };
-
-        rbracket_combo {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <24 21>;
-            layers = <2>;
-            timeout-ms = <3000>;
-        };
-
-        lpar_combo {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <12 20>;
-            layers = <2>;
-            timeout-ms = <3000>;
-        };
-
-        rpar_combo {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <12 21>;
-            layers = <2>;
-            timeout-ms = <3000>;
-        };
     };
 
     keymap {
@@ -162,9 +134,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC  &kp PLUS  &kp N7  &kp N8    &kp N9    &kp N0       &trans  &trans          &kp UP_ARROW    &trans           &kp MINUS  &kp BSPC
-&trans   &kp STAR  &kp N4  &kp N5    &kp N6    &trans       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT        &kp SLASH  &kp RALT
-&trans   &trans    &kp N1  &kp N2    &kp N3    &trans       &trans  &trans          &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans     &trans
+&kp ESC  &kp PLUS  &kp N7  &kp N8    &kp N9    &kp N0       &trans  &trans          &kp UP_ARROW    &trans     &kp MINUS  &kp BSPC
+&trans   &kp STAR  &kp N4  &kp N5    &kp N6    &trans       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp SLASH  &kp RALT
+&trans   &trans    &kp N1  &kp N2    &kp N3    &trans       &trans  &trans          &trans          &trans     &trans     &trans
                            &kp LGUI  &kp LALT  &kp SPACE    &trans  &trans          &trans
             >;
         };
@@ -177,10 +149,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp F1  &kp F2  &kp F3             &kp F4  &kp F5                   &kp F6   &kp F7  &kp F8          &kp F9           &kp F10   &kp PRINTSCREEN
-&trans      &trans  &trans  &trans             &trans  &trans                   &trans   &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BSLH  &thisisunsafe_macro
-&trans      &trans  &trans  &trans             &trans  &trans                   &trans   &trans  &trans          &trans           &trans    &to 3
-                            &formatcode_macro  &trans  &optimizeimport_macro    &kp RET  &trans  &kp RALT
+&kp ESCAPE  &kp F1  &kp F2  &kp F3             &kp F4  &kp F5                   &trans   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans            &kp PRINTSCREEN
+&trans      &kp F6  &kp F7  &kp F8             &kp F9  &kp F10                  &trans   &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &kp SINGLE_QUOTE  &thisisunsafe_macro
+&trans      &trans  &trans  &trans             &trans  &trans                   &trans   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans            &to 3
+                            &formatcode_macro  &trans  &optimizeimport_macro    &kp RET  &trans                &kp RALT
             >;
         };
 
