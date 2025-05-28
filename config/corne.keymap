@@ -4,12 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 15
 
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -128,10 +127,10 @@
 
         Mouse {
             bindings = <
-&trans  &trans  &trans          &msc SCRL_UP    &trans           &trans             &trans        &mkp MB1        &mmv MOVE_UP    &mkp MB2         &trans  &trans
-&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans             &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &trans             &trans        &trans          &trans          &trans           &trans  &trans
-                                &trans          &msc SCRL_LEFT   &msc SCRL_RIGHT    &msc SCRL_UP  &msc SCRL_DOWN  &trans
+&trans  &trans  &trans          &msc SCRL_UP    &trans           &trans      &trans    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &trans  &trans
+&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans      &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans      &trans    &trans          &trans          &trans           &trans  &trans
+                                &trans          &trans           &mkp MB1    &mkp MB1  &trans          &trans
             >;
         };
 
