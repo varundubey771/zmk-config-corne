@@ -35,18 +35,18 @@
             key-positions = <0 12 24 35 11 23>;
         };
 
-        haha_combo {
-            bindings = <&haha_macro>;
+        master_combo {
+            bindings = <&master_macro>;
             key-positions = <0 1 2 9 10 11>;
         };
     };
 
     macros {
-        haha_macro: password {
+        master_macro: master {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp I &kp H &kp A &kp V &kp E &kp A &kp D &kp O &kp G>;
-            label = "PASSWORD";
+            bindings = <&kp AT &kp R &kp EXCL &kp N &kp N2 &kp N7 &kp LS(D) &kp LS(E) &kp LS(C) &kp EXCL &kp DLLR &kp M>;
+            label = "MASTER";
         };
     };
 
