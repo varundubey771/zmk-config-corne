@@ -34,6 +34,20 @@
             bindings = <&bootloader>;
             key-positions = <0 12 24 35 11 23>;
         };
+
+        haha_combo {
+            bindings = <&haha_macro>;
+            key-positions = <0 1 2 9 10 11>;
+        };
+    };
+
+    macros {
+        haha_macro: password {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp H &kp A &kp V &kp E &kp A &kp D &kp O &kp G>;
+            label = "PASSWORD";
+        };
     };
 
     keymap {
@@ -78,6 +92,24 @@
 &trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
 &trans  &trans  &trans          &trans          &trans           &trans    &trans  &trans          &trans          &trans           &trans  &trans
                                 &trans          &trans           &trans    &trans  &trans          &trans
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E   &kp R  &kp T        &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&kp LSHFT  &kp A  &kp S  &kp D   &kp F  &kp G        &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
+&kp LCTRL  &kp Z  &kp X  &kp C   &kp V  &kp B        &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                         &trans  &mo 5  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        gaming2 {
+            bindings = <
+&kp ESC    &kp N1  &trans  &kp N3  &kp N4  &kp N5    &trans  &trans  &trans  &trans  &trans  &kp F1
+&kp GRAVE  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp F2
+&trans     &kp N2  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                           &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
