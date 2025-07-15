@@ -76,6 +76,17 @@
             timeout-ms = <60>;
             require-prior-idle-ms = <60>;
         };
+
+        btclear {
+            bindings = <&none>;
+            key-positions = <11 23 35>;
+            layers = <2>;
+        };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <0 12 24 35 11 23>;
+        };
     };
 
     keymap {
@@ -110,7 +121,7 @@
 &kp ESCAPE      &kp F1        &kp F2        &kp F3        &kp F4           &kp F5              &kp F6    &kp F7     &kp F8          &kp F9         &kp F10  &kp DEL
 &kp LEFT_SHIFT  &kp C_PREV    &kp C_NEXT    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE    &kp HOME  &kp PG_UP  &kp UP_ARROW    &kp PAGE_DOWN  &kp END  &kp C_BRIGHTNESS_INC
 &kp LCTRL       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4        &trans    &kp LEFT   &kp DOWN_ARROW  &kp RIGHT      &trans   &kp C_BRI_DEC
-                                            &bt BT_CLR    &trans           &trans              &trans    &trans     &trans
+                                            &kt C_MUTE    &trans           &trans              &trans    &trans     &trans
             >;
         };
 
